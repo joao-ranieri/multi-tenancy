@@ -1,6 +1,5 @@
-import { Controller, Get, Inject } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { ProductsService } from './products.service';
-import { Connection } from 'mongoose';
 
 @Controller('products')
 export class ProductsController {

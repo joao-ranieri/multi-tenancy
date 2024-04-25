@@ -1,11 +1,11 @@
-import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 
 import config from './config/config';
 
 import { TenantModule } from './modules/tenant/tenant.module';
-import { ProductsModule } from './modules/products/products.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -22,7 +22,7 @@ import { ProductsModule } from './modules/products/products.module';
       inject: [ConfigService],
     }),
     TenantModule,
-    ProductsModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],
