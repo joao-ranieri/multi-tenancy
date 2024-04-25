@@ -8,9 +8,10 @@ async function bootstrap() {
   const config = app.get(ConfigService);
   const port = config.get('server.port');
   
-  const logger = new Logger('Application');
-  logger.log(`Aplicação executando na porta ${port}`);
   
-  await app.listen(port);
+  await app.listen(port).then(() => {
+    const logger = new Logger('Application');
+    logger.log(`Aplicação executando na porta ${port}`);
+  });
 }
 bootstrap();
